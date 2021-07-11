@@ -5,7 +5,7 @@ class Point:
         self.y = initY
 
     def __str__(self):
-        return f"Point({self.x}, {self.y})"
+        return f"({self.x}, {self.y})"
 
     def __getDxDy(self, target):
         dx = self.x - target.x
@@ -37,14 +37,17 @@ class Point:
 
         return a, b
 
+def main():
+    p1 = Point(3, 4)
+    p2 = Point(4, 10)
+    origin = Point(0, 0)
 
-p1 = Point(3, 4)
-p2 = Point(4, 10)
-origin = Point(0, 0)
+    print(p1)
+    print(p1.distanceFromOrigin())
+    print(p1.distanceToPoint(Point(5, 4)))
+    print(p2.slopeToPoint(origin))
+    print(Point(4, 11).getEq(Point(6, 15)))
+    print(Point(-2, 6).getEq(Point(-10, -6)))
 
-print(p1)
-print(p1.distanceFromOrigin())
-print(p1.distanceToPoint(Point(5, 4)))
-print(p2.slopeToPoint(origin))
-print(Point(4, 11).getEq(Point(6, 15)))
-print(Point(-2, 6).getEq(Point(-10, -6)))
+if __name__ == "__main__":
+    main()
