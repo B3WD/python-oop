@@ -1,0 +1,22 @@
+class Player:
+    def __init__(self, name, hp, mp):
+        self.name = name
+        self.hp = hp
+        self.mp = mp
+        self.skills = dict()
+        self.guild = "Unaffiliated"
+
+    def add_skill(self, skill_name, mana_cost):
+        if skill_name in self.skills:
+            return f"Skill already added"
+            
+        self.skills[skill_name] = mana_cost
+        return f"Skill {skill_name} added to the collection of the player {self.name}"
+
+    def player_info(self):
+        name_msg = f"Name: {self.name}\n"
+        guild_msg = f"Guild: {self.guild}\n"
+        hp_msg = f"HP: {self.hp}\n"
+        mp_msg = f"MP: {self.mp}\n"
+        skills_msg = [f"==={skill_name} - {mana_cost}" for (skill_name, mana_cost) in self.skills.items()]
+        return name_msg + guild_msg + hp_msg + mp_msg + "\n".join(skills_msg) + "\n"

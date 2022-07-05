@@ -1,0 +1,2 @@
+
+        #     self.alive = CsSourceBot.alive
